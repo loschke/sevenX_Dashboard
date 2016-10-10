@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: 7x - Stage Info
-Plugin URI: https://bitbucket.org/svnx/wp-plugin-kit
-Description: Zeigt die aktuelle Entwicklungsumgebung in der AdminBar an.
-Version: 1.0
+Plugin Name: 7x - Dashboard Info
+Plugin URI: https://github.com/loschke/sevenX_Dashboard
+Description: Zeigt die aktuelle Entwicklungsumgebung an und informiert über Kontakt/Supportmöglichkeit zum Dienstleister.
+Version: 0.1
 Author: sevenX - Rico Loschke
 Author URI: http://sevenx.de
 Author Email: hello@sevenx.de
