@@ -1,0 +1,19 @@
+{
+  "name": "sevenx/wp-dashboard",
+  "description": "Add an info widget to the wordpress dashboard",
+  "keywords": ["wordpress", "plugin", "sevenx", "dashboard"],
+  "homepage": "https://github.com/loschke/sevenX_Dashboard",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "sevenX - Rico Loschke",
+      "email": "hello@sevenX.de",
+      "homepage": "https://sevenx.de"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.5",
+    "composer/installers": "v1.2.*"
+  }
+}
