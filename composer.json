@@ -16,6 +16,6 @@
   "prefer-stable": true,
   "require": {
     "php": ">=5.5",
-    "composer/installers": "v1.0.*"
+    "composer/installers": "v1.2.*"
   }
 }
