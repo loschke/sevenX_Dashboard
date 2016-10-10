@@ -1,0 +1,12 @@
+# PHPStorm Project Files
+*.iml
+.idea/
+
+# Windows Thumbnails
+Thumbs.db
+
+# Mac DS Store
+.DS_Store
+
+# Composer
+*.lock
