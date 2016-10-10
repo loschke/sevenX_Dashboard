@@ -36,12 +36,9 @@ class svnx_Dashboard {
 
 			add_action('admin_bar_menu', array( $self, 'svnx_addBtnToAdminBar' ));
 			add_filter('login_message', array( $self, 'svnx_stageLoginMessage' ));
+			add_action('wp_head', array( $self, 'svnx_addBtnStyle' ));
+			add_action('admin_head', array( $self, 'svnx_addBtnStyle' ));
 
-			if ( is_admin_bar_showing() ) {
-				add_action('wp_head', array( $self, 'svnx_addBtnStyle' ));
-				add_action('admin_head', array( $self, 'svnx_addBtnStyle' ));
-
-			}
 		}
 	}
 
@@ -53,16 +50,18 @@ class svnx_Dashboard {
 
 	// add stage mode button to admin bar
 	public function svnx_addBtnToAdminBar($adminBar) {
-		$adminBar->add_menu( array(
-			'id'    => 'dev-mode',
-			'parent' => false,
-			'title' => $this->_stageTitle,
-			'href'  => '#',
-			'meta'  => array(
-				'title' => __($this->_stageTitle),
-				'class' => 'stage-mode-style'
-			),
-		) );
+		if ( is_admin_bar_showing() ) {
+			$adminBar->add_menu( array(
+				'id'     => 'dev-mode',
+				'parent' => false,
+				'title'  => $this->_stageTitle,
+				'href'   => '#',
+				'meta'   => array(
+					'title' => __( $this->_stageTitle ),
+					'class' => 'stage-mode-style'
+				),
+			) );
+		}
 	}
 
 	//add stage mode info to login screen
