@@ -1,6 +1,7 @@
 # PHPStorm Project Files
 *.iml
 .idea/
+xampp.json
 
 # Windows Thumbnails
 Thumbs.db
