@@ -75,9 +75,9 @@ class svnx_Dashboard {
 	# https://developer.wordpress.org/reference/functions/add_menu_page/
     public function svnx_editAdminMenu() {
         global $menu;
-        $menu[5][0] = 'Newsverwaltung'; // Rename "Beiträge"
-        $menu[10][0] = 'Medienverwaltung'; // Rename "Media"
-        $menu[20][0] = 'Seitenverwaltung'; // Rename "Seiten"
+        $menu[5][0] = 'Aktuelles'; // Rename "Beiträge"
+        //$menu[10][0] = 'Medienverwaltung'; // Rename "Media"
+        //$menu[20][0] = 'Seitenverwaltung'; // Rename "Seiten"
         remove_menu_page('edit-comments.php'); // Remove the "Kommentare"
     }
 
@@ -86,11 +86,11 @@ class svnx_Dashboard {
 
         return array(
             'index.php', // Dashboard
-            'upload.php', // Media
             'separator1', // First separator
             'edit.php', // Posts
             'edit.php?post_type=page', // Pages
             'edit.php?post_type=wia_partner', // CPT Partner
+            'upload.php', // Media
             'separator2', // Second separator
             'themes.php', // Appearance
             'plugins.php', // Plugins
