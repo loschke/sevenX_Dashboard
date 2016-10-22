@@ -38,6 +38,7 @@ class svnx_Dashboard {
 			add_filter('login_message', array( $self, 'svnx_stageLoginMessage' ));
 			add_action('wp_head', array( $self, 'svnx_addBtnStyle' ));
 			add_action('admin_head', array( $self, 'svnx_addBtnStyle' ));
+            add_action( 'admin_menu', array( $self, 'svnx_editAdminMenu' ));
 
 		}
 	}
@@ -69,6 +70,12 @@ class svnx_Dashboard {
 		$loginMessage = "<p class='message' style='background-color:" . $this->_stageBGColor . " !important; color:#fff; margin-bottom:20px'>" . $this->_stageTitle . __(' Environment') . "</p>";
 		echo $loginMessage;
 	}
+
+    public function svnx_editAdminMenu() {
+        global $menu;
+        $menu[5][0] = 'WiA Aktuell'; // Rename "Beiträge"/"Posts" to Newsverwaltung
+        remove_menu_page('edit-comments.php'); // Remove the Comments Menu
+    }
 
 }
 //add_action( 'init', array( 'svnx_Dashboard', 'svnx_dashboardInit' ) );
