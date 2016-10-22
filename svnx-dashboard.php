@@ -72,12 +72,13 @@ class svnx_Dashboard {
 		echo $loginMessage;
 	}
 
+	# https://developer.wordpress.org/reference/functions/add_menu_page/
     public function svnx_editAdminMenu() {
         global $menu;
-        $menu[5][0] = 'Aktuelles'; // Rename "Beiträge"
-        $menu[10][0] = 'Bildverwaltung'; // Rename "Media"
-        $menu[20][0] = 'Inhaltsseiten'; // Rename "Media"
-        remove_menu_page('edit-comments.php'); // Remove the Comments Menu
+        $menu[5][0] = 'Newsverwaltung'; // Rename "Beiträge"
+        $menu[10][0] = 'Medienverwaltung'; // Rename "Media"
+        $menu[20][0] = 'Seitenverwaltung'; // Rename "Seiten"
+        remove_menu_page('edit-comments.php'); // Remove the "Kommentare"
     }
 
     public function svnx_customAdminMenuOrder($menu_ord) {
