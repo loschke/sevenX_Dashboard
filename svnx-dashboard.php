@@ -39,6 +39,7 @@ class svnx_Dashboard {
 			add_action('wp_head', array( $self, 'svnx_addBtnStyle' ));
 			add_action('admin_head', array( $self, 'svnx_addBtnStyle' ));
             add_action( 'admin_menu', array( $self, 'svnx_editAdminMenu' ));
+            add_action( 'menu_order', array( $self, 'svnx_customAdminMenuOrder' ));
 
 		}
 	}
@@ -73,8 +74,30 @@ class svnx_Dashboard {
 
     public function svnx_editAdminMenu() {
         global $menu;
-        $menu[5][0] = 'Aktuelles'; // Rename "Beiträge"/"Posts" to Aktuelles
+        $menu[5][0] = 'Aktuelles'; // Rename "Beiträge"
+        $menu[10][0] = 'Bildverwaltung'; // Rename "Media"
+        $menu[20][0] = 'Inhaltsseiten'; // Rename "Media"
         remove_menu_page('edit-comments.php'); // Remove the Comments Menu
+    }
+
+    public function svnx_customAdminMenuOrder($menu_ord) {
+        if (!$menu_ord) return true;
+
+        return array(
+            'index.php', // Dashboard
+            'upload.php', // Media
+            'separator1', // First separator
+            'edit.php', // Posts
+            'edit.php?post_type=page', // Pages
+            'edit.php?post_type=wia_partner', // CPT Partner
+            'separator2', // Second separator
+            'themes.php', // Appearance
+            'plugins.php', // Plugins
+            'users.php', // Users
+            'tools.php', // Tools
+            'options-general.php', // Settings
+            'separator-last', // Last separator
+        );
     }
 
 }
