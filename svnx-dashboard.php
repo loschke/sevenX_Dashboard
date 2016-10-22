@@ -73,7 +73,7 @@ class svnx_Dashboard {
 
     public function svnx_editAdminMenu() {
         global $menu;
-        $menu[5][0] = 'WiA Aktuell'; // Rename "Beiträge"/"Posts" to Newsverwaltung
+        $menu[5][0] = 'Aktuelles'; // Rename "Beiträge"/"Posts" to Aktuelles
         remove_menu_page('edit-comments.php'); // Remove the Comments Menu
     }
 
